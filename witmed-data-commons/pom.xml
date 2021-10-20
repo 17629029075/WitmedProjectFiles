@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>witmed-data-commons</artifactId>
+  <packaging>jar</packaging>
+
+  <parent>
+    <groupId>cn.ekgc.witmed</groupId>
+    <artifactId>witmed-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>cn.ekgc.witmed</groupId>
+      <artifactId>witmed-commons</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+    <!--配置 mysql-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <!--配置 mysql-->
+
+    <!--配置 mybatis-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis-spring-boot-starter.version}</version>
+    </dependency>
+    <!--配置 mybatis-->
+
+    <!--配置 druid-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>${druid-spring-boot-starter.version}</version>
+    </dependency>
+    <!--配置 druid-->
+
+    <!--配置 PageHelper-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+      <version>${pagehelper-spring-boot-starter.version}</version>
+    </dependency>
+    <!--配置 PageHelper-->
+
+    <!--配置 redis-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+    <!--配置 redis-->
+  </dependencies>
+</project>
