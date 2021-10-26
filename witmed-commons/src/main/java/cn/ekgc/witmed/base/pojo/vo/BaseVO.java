@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <b>系统基础信息类 - 基础视图信息类</b>
@@ -20,20 +21,19 @@ import java.io.Serializable;
  * @version 1.0.0
  * @since 1.0.0
  */
-@ApiModel
+@ApiModel("系统基础信息类 - 基础视图信息")
 public class BaseVO implements Serializable {
-	private static final long serialVersionUID = 7512361690727574184L;
-	
-	@ApiModelProperty(name = "系统状态：0-禁用  1-启用",example = "1")
-	private String status;                  //系统状态：0-禁用  1-启用
+	private static final long serialVersionUID = 5307507834353921384L;
+	@ApiModelProperty(name = "系统状态：0-禁用，1-启用", example = "1")
+	private String status;                      // 系统状态：0-禁用，1-启用
 	@ApiModelProperty(name = "创建人")
-	private String createUser;              //创建人
+	private String createUser;                  // 创建人
 	@ApiModelProperty(name = "创建时间")
-	private String createTime;              //创建时间
+	private Date createTime;                    // 创建时间
 	@ApiModelProperty(name = "修改人")
-	private String updateUser;              //修改人
+	private String updateUser;                  // 修改人
 	@ApiModelProperty(name = "修改时间")
-	private String updatetime;              //修改时间
+	private Date updateTime;                    // 修改时间
 	
 	public String getStatus() {
 		return status;
@@ -51,11 +51,11 @@ public class BaseVO implements Serializable {
 		this.createUser = createUser;
 	}
 	
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
 	
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 	
@@ -67,11 +67,11 @@ public class BaseVO implements Serializable {
 		this.updateUser = updateUser;
 	}
 	
-	public String getUpdatetime() {
-		return updatetime;
+	public Date getUpdateTime() {
+		return updateTime;
 	}
 	
-	public void setUpdatetime(String updatetime) {
-		this.updatetime = updatetime;
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
 	}
 }

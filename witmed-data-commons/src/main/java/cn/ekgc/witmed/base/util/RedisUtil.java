@@ -25,27 +25,28 @@ public class RedisUtil {
 	 * @param expireTimeSecond
 	 * @return
 	 */
-	public boolean setToRedis(String key,Object value,Long expireTimeSecond){
+	public boolean setToRedis(String key, Object value, Long expireTimeSecond) {
 		try {
-			// 将用户所给定的 Object 类型的 value 变成 String 类型的 Json
+			// 将用户所给定的 Object 类型的 value 变为 String 类型的 JSON
 			JsonMapper jsonMapper = new JsonMapper();
 			String valueJSON = jsonMapper.writeValueAsString(value);
-			// 将 JSON 存储到 Redis 中
+			// 将该 JSON 存储到 Redis 中
 			redisTemplate.opsForValue().set(key, valueJSON);
 			// 设置过期时间
-			if (expireTimeSecond ==null || expireTimeSecond <=0){
-				expireTimeSecond = BaseConstants.EXPIRE_AUTH_SECOND;
+			if (expireTimeSecond == null || expireTimeSecond <= 0) {
+				// 此时所设定的时间无效
+				expireTimeSecond = BaseConstants.EXPIRE_SECOND;
 			}
 			redisTemplate.expire(key, expireTimeSecond, TimeUnit.SECONDS);
 			return true;
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
 	
 	/**
-	 * <b>根据 key获得存储的 Redis 对象</b>
+	 * <b>根据 Key 获得存储的对象信息</b>
 	 * @param key
 	 * @param type
 	 * @return

@@ -23,9 +23,9 @@ import javax.servlet.http.HttpSession;
 @Controller("baseController")
 public class BaseController {
 	@Autowired
-	private HttpServletRequest request;
+	protected HttpServletRequest request;
 	@Autowired
-	private HttpServletResponse response;
+	protected HttpServletResponse response;
 	@Autowired
-	private HttpSession session;
+	protected HttpSession session;
 }

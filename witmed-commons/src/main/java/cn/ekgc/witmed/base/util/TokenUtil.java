@@ -17,7 +17,7 @@ import java.util.Map;
  * @since 1.0.0
  */
 public class TokenUtil {
-	//设置加密 Token 所使用的算法
+	// 设置加密 Token 所使用的算法
 	private static final Algorithm ALGORITHM = Algorithm.HMAC256(BaseConstants.SECRET_KEY);
 	
 	/**
@@ -44,11 +44,11 @@ public class TokenUtil {
 		// 获得所有的 key，变成 Set 集合
 		builder.withClaim("message", ClaimMap);
 		// 设置 Token 的过期时间
-		if (expireTimeSeconds == null || expireTimeSeconds <=0) {
+		if (expireTimeSeconds == null || expireTimeSeconds <= 0) {
 			// 用户所设定的时间无效，采用默认时间
-			expireTimeSeconds = BaseConstants.EXPIRE_AUTH_SECOND;
+			expireTimeSeconds = BaseConstants.EXPIRE_SECOND;
 		}
-		Long expireTimeMillis = new Date().getTime() + expireTimeSeconds*1000;
+		Long expireTimeMillis = new Date().getTime() + expireTimeSeconds * 1000;
 		// 根据过期的毫秒数，获得对应的 java.util.Date 对象
 		Date expireDate = new Date(expireTimeMillis);
 		builder.withExpiresAt(expireDate);

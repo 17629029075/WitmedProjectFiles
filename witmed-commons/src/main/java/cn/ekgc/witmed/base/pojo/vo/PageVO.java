@@ -22,34 +22,34 @@ import java.util.List;
  * @version 1.0.0
  * @since 1.0.0
  */
-@ApiModel
+@ApiModel("系统基础信息类 - 分页视图信息")
 public class PageVO<E extends BaseVO> implements Serializable {
-	private static final long serialVersionUID = -702200217463073198L;
-	@ApiModelProperty(name = "当前页码" ,example = "1")
-	private Integer pageNum;                //当前页码
-	@ApiModelProperty(name = "每页显示数量" ,example = "10")
-	private Integer pageSize;               //每页显示数量
-	@ApiModelProperty(name = "分页列表" )
-	private List<E> list;                   //分页列表
-	@ApiModelProperty(name = "总条数" ,example = "100")
-	private Integer totalSize;              //总条数
-	@ApiModelProperty(name = "总页数" ,example = "10")
-	private Integer totalPage;              //总页数
+	private static final long serialVersionUID = -3458922961994208370L;
+	@ApiModelProperty(name = "当前页码", example = "1")
+	private Integer pageNum;                        // 当前页码
+	@ApiModelProperty(name = "每页显示数量", example = "10")
+	private Integer pageSize;                       // 每页显示数量
+	@ApiModelProperty(name = "分页列表")
+	private List<E> list;                           // 分页列表
+	@ApiModelProperty(name = "总条数", example = "100")
+	private Long totalSize;                         // 总条数
+	@ApiModelProperty(name = "总页数", example = "10")
+	private Integer totalPage;                      // 总页数
 	
 	public PageVO() {}
 	
 	public PageVO(Integer pageNum, Integer pageSize) {
-		if (pageNum !=null && pageNum >0) {
+		if (pageNum != null && pageNum > 0) {
 			this.pageNum = pageNum;
 		} else {
 			this.pageNum = BaseConstants.PAGE_NUM;
-		}if (pageSize !=null && pageSize >0) {
+		}
+		
+		if (pageSize != null && pageSize > 0) {
 			this.pageSize = pageSize;
 		} else {
 			this.pageSize = BaseConstants.PAGE_SIZE;
 		}
-		
-		
 	}
 	
 	public Integer getPageNum() {
@@ -76,11 +76,11 @@ public class PageVO<E extends BaseVO> implements Serializable {
 		this.list = list;
 	}
 	
-	public Integer getTotalSize() {
+	public Long getTotalSize() {
 		return totalSize;
 	}
 	
-	public void setTotalSize(Integer totalSize) {
+	public void setTotalSize(Long totalSize) {
 		this.totalSize = totalSize;
 	}
 	

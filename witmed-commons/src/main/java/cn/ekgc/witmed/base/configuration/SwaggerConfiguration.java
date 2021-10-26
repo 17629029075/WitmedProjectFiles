@@ -19,31 +19,31 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfiguration {
 	@Bean
-	public Docket createAPI(){
+	public Docket createAPI() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				// 设定生成文档信息
+				// 设定生成文档的相关文件信息
 				.apiInfo(apiInfo())
-				//设置 Swagger 注解扫描位置
+				// 设置 Swagger 注解扫描位置
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("cn.ekgc.witmed"))
+				.apis(RequestHandlerSelectors.basePackage("com.whackon.witmed"))
 				.paths(PathSelectors.any())
 				.build();
 	}
 	
 	/**
-	 * <b>生成文档信息</b>
+	 * <b>设定生成文档信息</b>
 	 * @return
 	 */
-	private ApiInfo apiInfo(){
+	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				// 生成接口文档标题
 				.title("智慧医疗信息平台 - 交互接口文档")
-				// 设定项目接口文档版本号
-				.version("1.0.0")
-				// 设定项目描述信息
+				// 配置项目描述信息
 				.description("前后交互接口文档")
-				//设定项目联系人信息
-				.contact(new Contact("张三", "www.baidu.com", "san@163.com") )
+				// 设定项目文档版本号
+				.version("1.0.0")
+				// 设置项目联系人信息
+				.contact(new Contact("张三", "www.baidu.com", "san@163.com"))
 				.build();
 	}
 }

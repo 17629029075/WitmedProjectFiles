@@ -7,10 +7,11 @@ package cn.ekgc.witmed.base.pojo.enums;
  * @since 1.0.0
  */
 public enum StatusEnum {
-	STATUS_ENABLE(BaseEnumConstants.ENUM_STATUS_ENABLE,"启用"),
-	STATUS_DISABLE(BaseEnumConstants.ENUM_STATUS_DISABLE,"禁用");
-	private String code;                //编码
-	private String remark;              //说明
+	STATUS_ENABLE(BaseEnumConstants.ENUM_STATUS_ENABLE, "启用"),
+	STATUS_DISABLE(BaseEnumConstants.ENUM_STATUS_DISABLE, "禁用");
+	
+	private String code;                        // 编码
+	private String remark;                      // 说明
 	
 	private StatusEnum(String code, String remark) {
 		this.code = code;
