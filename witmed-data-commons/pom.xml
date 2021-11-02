@@ -19,7 +19,7 @@
     <dependency>
       <groupId>cn.ekgc.witmed</groupId>
       <artifactId>witmed-commons</artifactId>
-      <version>1.0.0</version>
+      <version>${parent.version}</version>
     </dependency>
     <!-- 配置 Witmed Commons 依赖 [END] -->
 
@@ -53,12 +53,5 @@
       <version>${pagehelper-spring-boot-starter.version}</version>
     </dependency>
     <!-- 配置 PageHelper Spring Boot Starter 依赖 [END] -->
-
-    <!-- 配置 Spring Boot Starter Data Redis 依赖 [BEGIN] -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
-    <!-- 配置 Spring Boot Starter Data Redis 依赖 [END] -->
   </dependencies>
 </project>
